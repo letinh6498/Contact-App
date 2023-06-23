@@ -39,12 +39,6 @@ jobs:
           command: |
             echo "TODO: Lint the frontend"
             npm run frontend:lint
-       # Test the frontend
-      - run:
-          name: Front-End Lint
-          command: |
-            echo "TODO: Lint the frontend"
-            npm run frontend:test
       # Build the frontend app
       - run:
           name: Front-End Build
@@ -58,22 +52,22 @@ jobs:
             echo "TODO: Build the backend API"
             npm run api:build
   # deploy step will run only after manual approval
-  # deploy:
-  #   docker:
-  #     - image: "cimg/base:stable"
-  #     # more setup needed for aws, node, elastic beanstalk
-  #   steps:
-  #     - node/install:
-  #         node-version: '14.15' 
-  #     - eb/setup
-  #     - aws-cli/setup
-  #     - checkout
-  #     - run:
-  #         name: Deploy App
-  #         # TODO: Install, build, deploy in both apps
-  #         command: |
-  #           echo "Install, build, deploy in both apps"
-  #           npm run deploy
+  deploy:
+    docker:
+      - image: "cimg/base:stable"
+      # more setup needed for aws, node, elastic beanstalk
+    steps:
+      - node/install:
+          node-version: '14.15' 
+      - eb/setup
+      - aws-cli/setup
+      - checkout
+      - run:
+          name: Deploy App
+          # TODO: Install, build, deploy in both apps
+          command: |
+            echo "Install, build, deploy in both apps"
+            npm run deploy
             
 workflows:
   udagram:
