@@ -43,7 +43,7 @@ jobs:
       - run:
           name: Front-End Build
           command: |
-            echo "TODO: Build the frontend app"
+            echo "TODO: Build the frontend app "
             npm run frontend:build
       # TODO: Build the backend API      
       - run:
@@ -63,7 +63,7 @@ jobs:
       - aws-cli/setup
       - checkout
       - run:
-          name: Deploy App
+          name: Deploy App API
           # TODO: Install, build, deploy in both apps
           command: |
             echo "Install, build, deploy in both apps"
