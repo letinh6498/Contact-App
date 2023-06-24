@@ -41,7 +41,7 @@ jobs:
             npm run frontend:lint
       # Build the frontend app
       - run:
-          name: Front-End Build
+          name: Front-End Build 12345678
           command: |
             echo "TODO: Build the frontend app "
             npm run frontend:build
